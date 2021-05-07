@@ -25,11 +25,33 @@ const ColumnLeft = styled.div`
     color: #fff;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 2rem;
+
+    h1 {
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    p {
+        margin: 2rem 0;
+        font-size: 4rem;
+        line-height: 1.1
+    }
 `;
 
-const Button = styled.div``;
+const Button = styled.div`
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+`;
 
-const ColumnRight = styled.div``;
+const ColumnRight = styled.div`
+    
+`;
 
 const Hero = () => {
     return (
@@ -42,7 +64,7 @@ const Hero = () => {
                 </ColumnLeft>
 
                 <ColumnRight>
-                
+
                 </ColumnRight>
             </Container>
         </Section>
