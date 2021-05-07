@@ -56,10 +56,36 @@ const Button = styled.div`
 `;
 
 const Image = styled.img`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
 `;
 
 const ColumnRight = styled.div`
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+
+    ${Image}:nth-child(1) {
+        top: 10px;
+        left: 10px; 
+    }
+    ${Image}:nth-child(2) {
+        top: 170px;
+        left: 10px; 
+    }
+    ${Image}:nth-child(3) {
+        top: 350px;
+        left: 50px; 
+    }
+    ${Image}:nth-child(4) {
+        top: 100px;
+        left: 75px; 
+    }
 `;
 
 const Hero = () => {
@@ -73,10 +99,10 @@ const Hero = () => {
                 </ColumnLeft>
 
                 <ColumnRight>
-                <Image src={PlanetOne} alt='planet' />
-                <Image src={PlanetTwo} alt='planet' />
-                <Image src={PlanetThree} alt='planet' />
-                <Image src={PlanetFour} alt='planet' />
+                    <Image src={PlanetOne} alt='planet' />
+                    <Image src={PlanetTwo} alt='planet' />
+                    <Image src={PlanetThree} alt='planet' />
+                    <Image src={PlanetFour} alt='planet' />
                 </ColumnRight>
             </Container>
         </Section>
