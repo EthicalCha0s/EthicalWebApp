@@ -1,6 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import React from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import PlanetOne from '../images/planet.svg'
+import PlanetTwo from '../images/planet-2.svg'
+import PlanetThree from '../images/planet-3.svg'
+import PlanetFour from '../images/planet-4.svg'
+
 
 const Section = styled.section`
     height: 100vh;
@@ -50,6 +55,9 @@ const Button = styled.div`
     background: transparent;
 `;
 
+const Image = styled.img`
+`;
+
 const ColumnRight = styled.div`
     
 `;
@@ -65,7 +73,10 @@ const Hero = () => {
                 </ColumnLeft>
 
                 <ColumnRight>
-
+                <Image src={PlanetOne} alt='planet' />
+                <Image src={PlanetTwo} alt='planet' />
+                <Image src={PlanetThree} alt='planet' />
+                <Image src={PlanetFour} alt='planet' />
                 </ColumnRight>
             </Container>
         </Section>
