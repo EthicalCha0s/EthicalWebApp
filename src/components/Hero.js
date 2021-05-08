@@ -53,6 +53,7 @@ const Button = styled(motion.button)`
     outline: none;
     cursor: pointer;
     background: transparent;
+    color: #fff;
 `;
 
 const Image = styled.img`
