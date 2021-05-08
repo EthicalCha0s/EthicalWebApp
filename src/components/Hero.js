@@ -1,19 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import React from 'react'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import PlanetOne from '../images/planet.svg'
 import PlanetTwo from '../images/planet-2.svg'
 import PlanetThree from '../images/planet-3.svg'
 import PlanetFour from '../images/planet-4.svg'
-
-const ButtonSpeed = 0.2;
 
 const Section = styled.section`
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #131313;
 `;
 const Container = styled.div`
     display: grid;
@@ -94,7 +91,7 @@ const ColumnRight = styled.div`
 const Hero = () => {
     const fadeLeft = {
         hidden: { opacity: 0, y: -100 },
-        visible: { opacity: 1, y: 0 }
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } }
     }
 
     return (
@@ -116,26 +113,24 @@ const Hero = () => {
                     <Button
                         whileHover={{
                             scale: 1.05,
-                            transition: { duration: { ButtonSpeed } }
                         }}
                         whileTap={{
                             scale: 0.95,
                             backgroundColor: '#67F6E7',
                             border: 'none',
-                            color: '#000',
-                            transition: { duration: { ButtonSpeed } }
+                            color: '#000'
                         }}
                         variants={fadeLeft}
                         initial='hidden'
                         animate='visible'
-                        transition={{ duration: 1 }}
-                    >Get started</Button>
+                    >
+                        Get started</Button>
                 </ColumnLeft>
 
                 <ColumnRight>
                     <Image src={PlanetOne} alt='planet'
                         whileTap={{ scale: 0.95 }}
-                        whileHover={{scale: 1.05}}
+                        whileHover={{ scale: 1.05 }}
                         drag={true}
                         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                         initial={{ opacity: 0, y: -100 }}
@@ -143,7 +138,7 @@ const Hero = () => {
                     />
                     <Image src={PlanetTwo} alt='planet'
                         whileTap={{ scale: 0.55 }}
-                        whileHover={{scale: 0.65}}
+                        whileHover={{ scale: 0.65 }}
                         drag={true}
                         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                         initial={{ opacity: 0, y: -100 }}
@@ -151,19 +146,19 @@ const Hero = () => {
                     />
                     <Image src={PlanetThree} alt='planet'
                         whileTap={{ scale: 0.75 }}
-                        whileHover={{scale: 0.85}}
+                        whileHover={{ scale: 0.85 }}
                         drag={true}
                         dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: 1, y: 150, x: -150, transition: { duration: 1 } }}
                     />
                     <Image src={PlanetFour} alt='planet'
-                         whileTap={{ scale: 1.05 }}
-                         whileHover={{scale: 1.15}}
-                         drag={true}
-                         dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
-                         initial={{ opacity: 0, y: -200 }}
-                         animate={{ opacity: 1, y: 300, x: 150, transition: { duration: 1 } }}
+                        whileTap={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.15 }}
+                        drag={true}
+                        dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
+                        initial={{ opacity: 0, y: -200 }}
+                        animate={{ opacity: 1, y: 300, x: 150, transition: { duration: 1 } }}
                     />
                 </ColumnRight>
             </Container>
