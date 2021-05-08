@@ -33,6 +33,7 @@ const ColumnLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
     padding: 5rem 2rem;
+    z-index: 2;
 
     h1 {
         margin-bottom: 0.5rem;
@@ -133,15 +134,37 @@ const Hero = () => {
 
                 <ColumnRight>
                     <Image src={PlanetOne} alt='planet'
-                        whileTap={{ scale: 0.9 }}
+                        whileTap={{ scale: 0.95 }}
+                        whileHover={{scale: 1.05}}
                         drag={true}
-                        dragConstraints={{ left: 0, right: 250, top: 0, bottom: 50 }}
+                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                         initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0, x:300, transition: { duration: 1 } }}
+                        animate={{ opacity: 1, y: 0, x: 300, transition: { duration: 1 } }}
                     />
-                    <Image src={PlanetTwo} alt='planet' />
-                    <Image src={PlanetThree} alt='planet' />
-                    <Image src={PlanetFour} alt='planet' />
+                    <Image src={PlanetTwo} alt='planet'
+                        whileTap={{ scale: 0.55 }}
+                        whileHover={{scale: 0.65}}
+                        drag={true}
+                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0, x: -300, transition: { duration: 1 } }}
+                    />
+                    <Image src={PlanetThree} alt='planet'
+                        whileTap={{ scale: 0.75 }}
+                        whileHover={{scale: 0.85}}
+                        drag={true}
+                        dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
+                        initial={{ opacity: 0, y: 0 }}
+                        animate={{ opacity: 1, y: 150, x: -150, transition: { duration: 1 } }}
+                    />
+                    <Image src={PlanetFour} alt='planet'
+                         whileTap={{ scale: 1.05 }}
+                         whileHover={{scale: 1.15}}
+                         drag={true}
+                         dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
+                         initial={{ opacity: 0, y: -200 }}
+                         animate={{ opacity: 1, y: 300, x: 150, transition: { duration: 1 } }}
+                    />
                 </ColumnRight>
             </Container>
         </Section>
