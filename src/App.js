@@ -1,5 +1,11 @@
 import './App.css';
-import Hero  from './components/Hero'
+import Hero from './components/Hero'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // window.mobileCheck = function() {
 //   let check = false;
@@ -9,7 +15,16 @@ import Hero  from './components/Hero'
 
 function App() {
   return (
-    <Hero/>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Hero></Hero>
+        </Route>
+        <Route path="/about">
+          
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
