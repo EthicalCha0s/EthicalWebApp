@@ -95,74 +95,78 @@ const Hero = () => {
     }
 
     return (
-        <Section>
-            <Container>
-                <ColumnLeft>
-                    <motion.h1
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                    >
-                        Welcome</motion.h1>
-                    <motion.p
-                        variants={fadeLeft}
-                        initial='hidden'
-                        animate='visible'
-                        transition={{ duration: 1 }}
-                    >I am Boris</motion.p>
-                    <Button
-                        whileHover={{
-                            scale: 1.05,
-                        }}
-                        whileTap={{
-                            scale: 0.95,
-                            backgroundColor: '#67F6E7',
-                            border: 'none',
-                            color: '#000'
-                        }}
-                        variants={fadeLeft}
-                        initial='hidden'
-                        animate='visible'
-                    >
-                        Get started</Button>
-                </ColumnLeft>
+        // <Section>
+        //     <Container>
+        //         <ColumnLeft>
+        //             <motion.h1
+        //                 initial={{ opacity: 0 }}
+        //                 animate={{ opacity: 1 }}
+        //                 transition={{ duration: 1 }}
+        //             >
+        //                 Welcome</motion.h1>
+        //             <motion.p
+        //                 variants={fadeLeft}
+        //                 initial='hidden'
+        //                 animate='visible'
+        //                 transition={{ duration: 1 }}
+        //             >I am Boris</motion.p>
+        //             <Button
+        //                 whileHover={{
+        //                     scale: 1.05,
+        //                 }}
+        //                 whileTap={{
+        //                     scale: 0.95,
+        //                     backgroundColor: '#67F6E7',
+        //                     border: 'none',
+        //                     color: '#000'
+        //                 }}
+        //                 variants={fadeLeft}
+        //                 initial='hidden'
+        //                 animate='visible'
+        //             >
+        //                 Get started</Button>
+        //         </ColumnLeft>
 
-                <ColumnRight>
-                    <Image src={PlanetOne} alt='planet'
-                        whileTap={{ scale: 0.95 }}
-                        whileHover={{ scale: 1.05 }}
-                        drag={true}
-                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0, x: 300, transition: { duration: 1 } }}
-                    />
-                    <Image src={PlanetTwo} alt='planet'
-                        whileTap={{ scale: 0.55 }}
-                        whileHover={{ scale: 0.65 }}
-                        drag={true}
-                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0, x: -300, transition: { duration: 1 } }}
-                    />
-                    <Image src={PlanetThree} alt='planet'
-                        whileTap={{ scale: 0.75 }}
-                        whileHover={{ scale: 0.85 }}
-                        drag={true}
-                        dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
-                        initial={{ opacity: 0, y: 0 }}
-                        animate={{ opacity: 1, y: 150, x: -150, transition: { duration: 1 } }}
-                    />
-                    <Image src={PlanetFour} alt='planet'
-                        whileTap={{ scale: 1.05 }}
-                        whileHover={{ scale: 1.15 }}
-                        drag={true}
-                        dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
-                        initial={{ opacity: 0, y: -200 }}
-                        animate={{ opacity: 1, y: 300, x: 150, transition: { duration: 1 } }}
-                    />
-                </ColumnRight>
-            </Container>
-        </Section>
+        //         <ColumnRight>
+        //             <Image src={PlanetOne} alt='planet'
+        //                 whileTap={{ scale: 0.95 }}
+        //                 whileHover={{ scale: 1.05 }}
+        //                 drag={true}
+        //                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        //                 initial={{ opacity: 0, y: -100 }}
+        //                 animate={{ opacity: 1, y: 0, x: 300, transition: { duration: 1 } }}
+        //             />
+        //             <Image src={PlanetTwo} alt='planet'
+        //                 whileTap={{ scale: 0.55 }}
+        //                 whileHover={{ scale: 0.65 }}
+        //                 drag={true}
+        //                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        //                 initial={{ opacity: 0, y: -100 }}
+        //                 animate={{ opacity: 1, y: 0, x: -300, transition: { duration: 1 } }}
+        //             />
+        //             <Image src={PlanetThree} alt='planet'
+        //                 whileTap={{ scale: 0.75 }}
+        //                 whileHover={{ scale: 0.85 }}
+        //                 drag={true}
+        //                 dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
+        //                 initial={{ opacity: 0, y: 0 }}
+        //                 animate={{ opacity: 1, y: 150, x: -150, transition: { duration: 1 } }}
+        //             />
+        //             <Image src={PlanetFour} alt='planet'
+        //                 whileTap={{ scale: 1.05 }}
+        //                 whileHover={{ scale: 1.15 }}
+        //                 drag={true}
+        //                 dragConstraints={{ left: 250, right: 250, top: 250, bottom: 250 }}
+        //                 initial={{ opacity: 0, y: -200 }}
+        //                 animate={{ opacity: 1, y: 300, x: 150, transition: { duration: 1 } }}
+        //             />
+        //         </ColumnRight>
+        //     </Container>
+        // </Section>
+
+        <div className="create">
+            <h2>Add text</h2>
+        </div>
     )
 }
 

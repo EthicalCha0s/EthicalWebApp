@@ -1,5 +1,6 @@
 import './App.css';
 import Hero from './components/Hero'
+import About from './components/About';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,11 +18,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Hero></Hero>
         </Route>
-        <Route path="/about">
-          
+        <Route exact path="/about">
+          <About></About>
         </Route>
       </Switch>
     </Router>
