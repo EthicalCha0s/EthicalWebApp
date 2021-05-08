@@ -6,6 +6,7 @@ import PlanetTwo from '../images/planet-2.svg'
 import PlanetThree from '../images/planet-3.svg'
 import PlanetFour from '../images/planet-4.svg'
 
+const ButtonSpeed = 0.2;
 
 const Section = styled.section`
     height: 100vh;
@@ -56,7 +57,7 @@ const Button = styled(motion.button)`
     color: #fff;
 `;
 
-const Image = styled.img`
+const Image = styled(motion.img)`
     position: absolute;
     width: 100%;
     height: 100%;
@@ -112,13 +113,32 @@ const Hero = () => {
                         transition={{ duration: 1 }}
                     >I am Boris</motion.p>
                     <Button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: { ButtonSpeed } }
+                        }}
+                        whileTap={{
+                            scale: 0.95,
+                            backgroundColor: '#67F6E7',
+                            border: 'none',
+                            color: '#000',
+                            transition: { duration: { ButtonSpeed } }
+                        }}
+                        variants={fadeLeft}
+                        initial='hidden'
+                        animate='visible'
+                        transition={{ duration: 1 }}
                     >Get started</Button>
                 </ColumnLeft>
 
                 <ColumnRight>
-                    <Image src={PlanetOne} alt='planet' />
+                    <Image src={PlanetOne} alt='planet'
+                        whileTap={{ scale: 0.9 }}
+                        drag={true}
+                        dragConstraints={{ left: 0, right: 250, top: 0, bottom: 50 }}
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0, x:300, transition: { duration: 1 } }}
+                    />
                     <Image src={PlanetTwo} alt='planet' />
                     <Image src={PlanetThree} alt='planet' />
                     <Image src={PlanetFour} alt='planet' />
