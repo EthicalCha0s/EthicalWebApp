@@ -113,6 +113,7 @@ const Hero = () => {
                     >I am Boris</motion.p>
                     <Button
                         whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >Get started</Button>
                 </ColumnLeft>
 
