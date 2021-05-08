@@ -45,7 +45,7 @@ const ColumnLeft = styled.div`
     }
 `;
 
-const Button = styled.div`
+const Button = styled(motion.button)`
     padding: 1rem 3rem;
     font-size: 1rem;
     border: 2px solid #fff;
@@ -89,13 +89,30 @@ const ColumnRight = styled.div`
 `;
 
 const Hero = () => {
+    const fadeLeft = {
+        hidden: { opacity: 0, y: -100 },
+        visible: { opacity: 1, y: 0 }
+    }
+
     return (
         <Section>
             <Container>
                 <ColumnLeft>
-                    <h1>Welcome</h1>
-                    <p>I am Boris</p>
-                    <Button>Get started</Button>
+                    <motion.h1
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                    >
+                        Welcome</motion.h1>
+                    <motion.p
+                        variants={fadeLeft}
+                        initial='hidden'
+                        animate='visible'
+                        transition={{ duration: 1 }}
+                    >I am Boris</motion.p>
+                    <Button
+                        whileHover={{ scale: 1.05 }}
+                    >Get started</Button>
                 </ColumnLeft>
 
                 <ColumnRight>
