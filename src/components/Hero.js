@@ -1,6 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import React from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
 import PlanetOne from '../images/planet.svg'
 import PlanetTwo from '../images/planet-2.svg'
 import PlanetThree from '../images/planet-3.svg'
@@ -42,6 +44,16 @@ const ColumnLeft = styled.div`
         font-size: 4rem;
         line-height: 1.1
     }
+
+    a {
+    display: flex;
+    justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
+    align-items: center;
+    color: #fff;
+  }
+  a:active {
+      color: #000;
+  }
 `;
 
 const Button = styled(motion.button)`
@@ -124,7 +136,7 @@ const Hero = () => {
                         initial='hidden'
                         animate='visible'
                     >
-                        Get started</Button>
+                        <Link to='/about' > Get started</Link></Button>
                 </ColumnLeft>
 
                 <ColumnRight>
