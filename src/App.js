@@ -20,7 +20,7 @@ function App() {
           <Hero isMobile={isTabletOrMobileDevice}></Hero>
         </Route>
         <Route exact path="/about">
-          <About></About>
+          <About isMobile={isTabletOrMobileDevice}></About>
         </Route>
       </Switch>
     </Router>
