@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
+import PropTypes from 'prop-types'
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +10,8 @@ import PlanetOne from '../images/planet.svg'
 import PlanetTwo from '../images/planet-2.svg'
 import PlanetThree from '../images/planet-3.svg'
 import PlanetFour from '../images/planet-4.svg'
+
+
 
 const Section = styled.section`
     height: 100vh;
@@ -26,42 +30,6 @@ const Container = styled.div`
     }
 `;
 
-const ColumnLeft = styled.div`
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 5rem 8rem;
-    z-index: 2;
-    /* border-style: solid;
-    border-color: #fff;  */
-    min-width:500px;
-
-    h1 {
-        margin-bottom: 0.5rem;
-        font-size: 2rem;
-    }
-
-    p {
-        margin: 2rem 0;
-        font-size: 4rem;
-        line-height: 1.1;
-        overflow: visible;
-        white-space: nowrap;
-    }
-
-    a {
-    display: flex;
-    justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
-    align-items: center;
-    color: #fff;
-  }
-  a:active {
-      color: #000;
-  }
-`;
-
 const Button = styled(motion.button)`
     padding: 1rem 3rem;
     font-size: 1rem;
@@ -72,7 +40,6 @@ const Button = styled(motion.button)`
     background: transparent;
     color: #fff;
 `;
-
 const Image = styled(motion.img)`
     position: absolute;
     width: 100%;
@@ -80,7 +47,6 @@ const Image = styled(motion.img)`
     max-width: 250px;
     max-height: 250px;
 `;
-
 const ColumnRight = styled.div`
     display: flex;
     justify-content: center;
@@ -105,14 +71,53 @@ const ColumnRight = styled.div`
         left: 75px; 
     }
 `;
+const fadeLeft = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+}
 
-const Hero = () => {
-    const fadeLeft = {
-        hidden: { opacity: 0, y: -100 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+const Hero = ({ isMobile }) => {
+
+    const ColumnLeft = styled.div`
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: ${isMobile ? "2.5rem 4rem;" : "5rem 8rem;"};
+    border:solid;
+    border-color:#fff;
+
+    /* padding: 5rem 8rem; */
+    z-index: 2;
+    min-width:${isMobile ? "200px" : "500px"};
+
+    h1 {
+        margin-bottom: 0.5rem;
+        font-size: ${isMobile ? "1rem" : "2rem"};
     }
 
+    p {
+        margin: 2rem 0;
+        font-size: ${isMobile ? "2rem" : "4rem"};
+        line-height: 1.1;
+        overflow: visible;
+        white-space: nowrap;
+    }
+
+    a {
+    display: flex;
+    justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
+    align-items: center;
+    color: #fff;
+  }
+  a:active {
+      color: #000;
+  }
+`;
+
     return (
+
         <Section>
             <Container>
                 <ColumnLeft>
@@ -128,7 +133,7 @@ const Hero = () => {
                         animate='visible'
                         transition={{ duration: 1 }}
                     >I am {' '}
-                    <Typical
+                        <Typical
                             loop={Infinity}
                             wrapper="b"
                             steps={[
@@ -205,6 +210,10 @@ const Hero = () => {
             </Container>
         </Section>
     )
+}
+
+Hero.propTypes = {
+    isMobile: PropTypes.bool
 }
 
 export default Hero
