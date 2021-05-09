@@ -147,7 +147,7 @@ const Hero = ({ isMobile }) => {
                                 2000,
                                 'a gamer.',
                                 2000,
-                                'a researcher.',
+                                'a scientist.',
                                 2000,
                                 'interested.',
                                 4000,
