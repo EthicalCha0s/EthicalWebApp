@@ -29,7 +29,6 @@ const Container = styled.div`
         grid-template-columns: 1fr;
     }
 `;
-
 const ColumnLeft = styled.div`
     display: flex;
     color: #fff;
@@ -65,7 +64,6 @@ const ColumnLeft = styled.div`
       color: #000;
   }
 `;
-
 const Button = styled(motion.button)`
     padding: 1rem 3rem;
     font-size: 1rem;
@@ -76,7 +74,6 @@ const Button = styled(motion.button)`
     background: transparent;
     color: #fff;
 `;
-
 const Image = styled(motion.img)`
     position: absolute;
     width: 100%;
@@ -84,7 +81,6 @@ const Image = styled(motion.img)`
     max-width: 250px;
     max-height: 250px;
 `;
-
 const ColumnRight = styled.div`
     display: flex;
     justify-content: center;
@@ -109,7 +105,6 @@ const ColumnRight = styled.div`
         left: 75px; 
     }
 `;
-
 const fadeLeft = {
     hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } }
