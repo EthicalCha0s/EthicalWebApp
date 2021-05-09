@@ -110,6 +110,7 @@ const Hero = ({ isMobile }) => {
     align-items: center;
     color: #fff;
     pointer-events:all;
+    text-decoration: none;
   }
   a:active {
       color: #000;
