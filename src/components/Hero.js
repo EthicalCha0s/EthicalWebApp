@@ -89,6 +89,7 @@ const Hero = ({ isMobile }) => {
     border-color:#fff; */
     z-index: 2;
     min-width:${isMobile ? "200px" : "500px"};
+    pointer-events: none;
 
     h1 {
         margin-bottom: 0.5rem;
@@ -108,6 +109,7 @@ const Hero = ({ isMobile }) => {
     justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
     align-items: center;
     color: #fff;
+    pointer-events:all;
   }
   a:active {
       color: #000;
