@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Typical from 'react-typical';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -31,8 +32,11 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 5rem 2rem;
+    padding: 5rem 8rem;
     z-index: 2;
+    /* border-style: solid;
+    border-color: #fff;  */
+    min-width:500px;
 
     h1 {
         margin-bottom: 0.5rem;
@@ -42,7 +46,9 @@ const ColumnLeft = styled.div`
     p {
         margin: 2rem 0;
         font-size: 4rem;
-        line-height: 1.1
+        line-height: 1.1;
+        overflow: visible;
+        white-space: nowrap;
     }
 
     a {
@@ -121,7 +127,30 @@ const Hero = () => {
                         initial='hidden'
                         animate='visible'
                         transition={{ duration: 1 }}
-                    >I am Boris</motion.p>
+                    >I am {' '}
+                    <Typical
+                            loop={Infinity}
+                            wrapper="b"
+                            steps={[
+                                'Boris.',
+                                4000,
+                                'an engineer.',
+                                2000,
+                                'a designer.',
+                                2000,
+                                'a team leader.',
+                                2000,
+                                'an AI Enthusiast.',
+                                2000,
+                                'a gamer.',
+                                2000,
+                                'a researcher.',
+                                2000,
+                                'interested.',
+                                4000,
+                            ]}
+                        />
+                    </motion.p>
                     <Button
                         whileHover={{
                             scale: 1.05,
