@@ -85,10 +85,8 @@ const Hero = ({ isMobile }) => {
     justify-content: center;
     align-items: flex-start;
     padding: ${isMobile ? "2.5rem 4rem;" : "5rem 8rem;"};
-    border:solid;
-    border-color:#fff;
-
-    /* padding: 5rem 8rem; */
+    /* border:solid;
+    border-color:#fff; */
     z-index: 2;
     min-width:${isMobile ? "200px" : "500px"};
 
