@@ -29,41 +29,7 @@ const Container = styled.div`
         grid-template-columns: 1fr;
     }
 `;
-const ColumnLeft = styled.div`
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 5rem 8rem;
-    z-index: 2;
-    /* border-style: solid;
-    border-color: #fff;  */
-    min-width:500px;
 
-    h1 {
-        margin-bottom: 0.5rem;
-        font-size: 2rem;
-    }
-
-    p {
-        margin: 2rem 0;
-        font-size: 4rem;
-        line-height: 1.1;
-        overflow: visible;
-        white-space: nowrap;
-    }
-
-    a {
-    display: flex;
-    justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
-    align-items: center;
-    color: #fff;
-  }
-  a:active {
-      color: #000;
-  }
-`;
 const Button = styled(motion.button)`
     padding: 1rem 3rem;
     font-size: 1rem;
@@ -111,7 +77,47 @@ const fadeLeft = {
 }
 
 const Hero = ({ isMobile }) => {
+
+    const ColumnLeft = styled.div`
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: ${isMobile ? "2.5rem 4rem;" : "5rem 8rem;"};
+    border:solid;
+    border-color:#fff;
+
+    /* padding: 5rem 8rem; */
+    z-index: 2;
+    min-width:${isMobile ? "200px" : "500px"};
+
+    h1 {
+        margin-bottom: 0.5rem;
+        font-size: ${isMobile ? "1rem" : "2rem"};
+    }
+
+    p {
+        margin: 2rem 0;
+        font-size: ${isMobile ? "2rem" : "4rem"};
+        line-height: 1.1;
+        overflow: visible;
+        white-space: nowrap;
+    }
+
+    a {
+    display: flex;
+    justify-content: ${props => props.tempLeftProp ? 'flex-start' : 'center'};
+    align-items: center;
+    color: #fff;
+  }
+  a:active {
+      color: #000;
+  }
+`;
+
     return (
+
         <Section>
             <Container>
                 <ColumnLeft>
