@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
+import PropTypes from 'prop-types'
+
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +10,8 @@ import PlanetOne from '../images/planet.svg'
 import PlanetTwo from '../images/planet-2.svg'
 import PlanetThree from '../images/planet-3.svg'
 import PlanetFour from '../images/planet-4.svg'
+
+
 
 const Section = styled.section`
     height: 100vh;
@@ -106,12 +110,12 @@ const ColumnRight = styled.div`
     }
 `;
 
-const Hero = () => {
-    const fadeLeft = {
-        hidden: { opacity: 0, y: -100 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } }
-    }
+const fadeLeft = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+}
 
+const Hero = ({ isMobile }) => {
     return (
         <Section>
             <Container>
@@ -128,7 +132,7 @@ const Hero = () => {
                         animate='visible'
                         transition={{ duration: 1 }}
                     >I am {' '}
-                    <Typical
+                        <Typical
                             loop={Infinity}
                             wrapper="b"
                             steps={[
@@ -205,6 +209,10 @@ const Hero = () => {
             </Container>
         </Section>
     )
+}
+
+Hero.propTypes = {
+    isMobile: PropTypes.bool
 }
 
 export default Hero
