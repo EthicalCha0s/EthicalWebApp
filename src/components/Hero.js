@@ -122,12 +122,18 @@ const Hero = ({ isMobile }) => {
         <Section>
             <Container>
                 <ColumnLeft>
-                    <motion.h1
+                <motion.h1
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
                         Welcome</motion.h1>
+                        <motion.h3
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                    >
+                        ( This website is a work in progress )</motion.h3>
                     <motion.p
                         variants={fadeLeft}
                         initial='hidden'
